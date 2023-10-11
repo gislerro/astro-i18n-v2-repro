@@ -1,0 +1,20 @@
+{
+	"name": "astro-i18n-v2-0",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"i18n:extract": "astro-i18n extract",
+		"i18n:generate:pages": "astro-i18n generate:pages --purge",
+		"i18n:generate:types": "astro-i18n generate:types",
+		"i18n:sync": "npm run i18n:generate:pages && npm run i18n:generate:types"
+	},
+	"dependencies": {
+		"astro": "^3.2.4",
+		"astro-i18n": "^2.0.0"
+	}
+}
