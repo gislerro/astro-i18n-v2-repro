@@ -7,7 +7,7 @@ type SecondaryLocale = "de"
 type Locale = PrimaryLocale | SecondaryLocale
 type RouteParameters = {"/about":undefined;"/":undefined;}
 type Route = keyof RouteParameters
-type TranslationVariables = object
+type TranslationVariables = {"about":object|undefined;"example":object|undefined;}
 type Translation = keyof TranslationVariables
 type Environment = "none"|"node"|"browser"
 declare module "astro-i18n" {

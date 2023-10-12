@@ -8,6 +8,7 @@ import { t } from 'astro-i18n'
 <Layout title="About">
    <div>This is the about page</div>
    <div>Locale: {astroI18n.locale}</div>
-   <div>from common: {t("example")}</div>
+   <div>from common: {t('from_common')}</div>
+   <div>from common group: {t('common.from_common')}</div>
 	<div>from route: {t('about')}</div>
 </Layout>
