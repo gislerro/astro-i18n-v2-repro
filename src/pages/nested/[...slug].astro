@@ -1,0 +1,30 @@
+---
+import type { GetStaticPaths } from "astro";
+
+interface Props {
+   sample: string
+}
+
+export const getStaticPaths = (() => {
+   const slugs = ['some', 'static', 'routes']
+   return slugs.map((slug) => {
+      return {
+         params: { slug },
+         props: {
+            sample: slug
+         }
+      }
+   })
+}) satisfies GetStaticPaths
+
+import { astroI18n, t } from 'astro-i18n';
+import Layout from '../../layouts/Layout.astro';
+
+const { sample } = Astro.props
+---
+
+<Layout title={`Nested ${sample}`}>
+	<div>Locale: {astroI18n.locale}</div>
+	<div>from common: {t('from_common')}</div>
+	<div>from route: {t('nested_dynamic_translation')}</div>
+</Layout>

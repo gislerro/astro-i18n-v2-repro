@@ -1,10 +1,10 @@
 ---
 import { astroI18n, t } from 'astro-i18n';
-import Layout from '../layouts/Layout.astro';
+import Layout from '../../layouts/Layout.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Nested">
 	<div>Locale: {astroI18n.locale}</div>
 	<div>from common: {t('from_common')}</div>
-	<div>from route: {t('example')}</div>
+	<div>from route: {t('nested_translation')}</div>
 </Layout>
