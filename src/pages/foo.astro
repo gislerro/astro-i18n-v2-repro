@@ -1,0 +1,9 @@
+---
+import { astroI18n, t } from 'astro-i18n';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Foo">
+	<div>Locale: {astroI18n.locale}</div>
+   <div>Foo.</div>
+</Layout>
