@@ -24,6 +24,7 @@ const { sample } = Astro.props
 ---
 
 <Layout title={`Nested ${sample}`}>
+   <div>dynamic: {sample}</div>
 	<div>Locale: {astroI18n.locale}</div>
 	<div>from common: {t('from_common')}</div>
 	<div>from route: {t('nested_dynamic_translation')}</div>
