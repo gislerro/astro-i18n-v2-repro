@@ -1,14 +1,12 @@
 ---
-import { astroI18n } from 'astro-i18n';
+import { astroI18n, t } from 'astro-i18n';
 import Layout from '../layouts/Layout.astro';
-
-import { t } from 'astro-i18n'
 
 ---
 
 <Layout title="Welcome to Astro.">
 	<div>Locale: {astroI18n.locale}</div>
-	<div>from common: {t('from_common')}</div>
-	<div>from common group: {t('common.from_common')}</div>
-	<div>from route: {t('example')}</div>
+	<div>from common: {t('hello')}</div>
+	<div>from group: {t('admin.how_are_you')}</div>
+	<div>from group: {t('how_are_you')}</div>
 </Layout>

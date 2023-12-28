@@ -1,0 +1,22 @@
+---
+import type { GetStaticPaths } from "astro";
+import { astroI18n, t } from 'astro-i18n';
+import Layout from '../../layouts/Layout.astro';
+
+export const getStaticPaths = (() => {
+   return [
+      { params: { id: 'foo'} },
+      { params: { id: 'bar'} },
+      { params: { id: 'baz'} },
+   ];
+}) satisfies GetStaticPaths;
+
+const { id } = Astro.params
+---
+
+<Layout title="Welcome to Astro.">
+	<div>Locale: {astroI18n.locale}</div>
+   <div>id: {id}</div>
+	<div>from common: {t('hello')}</div>
+	<div>from group: {t('bye')}</div>
+</Layout>

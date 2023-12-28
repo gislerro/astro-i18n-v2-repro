@@ -3,11 +3,11 @@
 
 // ###> astro-i18n/type-generation ###
 type PrimaryLocale = "en"
-type SecondaryLocale = "de"
+type SecondaryLocale = "fr"
 type Locale = PrimaryLocale | SecondaryLocale
-type RouteParameters = {"/about":undefined;"/":undefined;}
+type RouteParameters = {"/posts/[id]":{"id":unknown;};"/":undefined;"/admin":undefined;"/admin/secret":undefined;}
 type Route = keyof RouteParameters
-type TranslationVariables = {"about":object|undefined;"example":object|undefined;"from_common":object|undefined;}
+type TranslationVariables = {"hello":object|undefined;"form.first_name":object|undefined;"how_are_you":object|undefined;"bye":object|undefined;}
 type Translation = keyof TranslationVariables
 type Environment = "none"|"node"|"browser"
 declare module "astro-i18n" {
@@ -198,6 +198,8 @@ declare module "astro-i18n" {
 		extractRouteLocale(route: string): string|null
 		/** Initializes astro-i18n on the server-side. */
 		initialize(config?: Partial<AstroI18nConfig> | string, formatters?: TranslationFormatters = {}): Promise<void>
+		/** Redirects the user to the given destination. */
+		redirect(destination: string | URL, status = 301)
 	}
 	export const astroI18n: AstroI18n
 }
